@@ -1,19 +1,27 @@
 ﻿using ExampleClassLibrary;
 
+List<Address> addresses = new()
+{
+    new Address() { City = "Moscow" },
+    new Address() { City = "Orel" },
+    new Address() { City = "Tula" },
+    new Address() { City = "Kaluga" },
+};
+
 var users = new List<User>()
 {
-    new("Sam", 35, new Address() { City = "Moscow" }),
-    new("Bob", 31, new Address() { City = "Orel" }),
-    new("Tim", 29, new Address() { City = "Tula" }),
-    new("Joe", 42, new Address() { City = "Orel" }),
-    new("Leo", 35, new Address() { City = "Moscow" }),
-    new("Tom", 41, new Address() { City = "Kaluga" }),
-    new("Bill", 19, new Address() { City = "Moscow" }),
-    new("Ann", 35, new Address() { City = "Tula" }),
-    new("Poul", 24, new Address() { City = "Kaluga" }),
-    new("Leo", 30, new Address() { City = "Moscow" }),
-    new("Phill", 37, new Address() { City = "Tula" }),
-    new("Elisa", 25, new Address() { City = "Moscow" }),
+    new("Sam", 35, addresses[0]),
+    new("Bob", 31, addresses[1]),
+    new("Tim", 29, addresses[2]),
+    new("Joe", 42, addresses[1]),
+    new("Leo", 35, addresses[0]),
+    new("Tom", 41, addresses[3]),
+    new("Bill", 19, addresses[0]),
+    new("Ann", 35, addresses[2]),
+    new("Poul", 24, addresses[3]),
+    new("Leo", 30, addresses[0]),
+    new("Phill", 37, addresses[2]),
+    new("Elisa", 25, addresses[0]),
 };
 
 var usersGroupO = from u in users
